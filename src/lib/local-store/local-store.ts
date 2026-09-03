@@ -3,7 +3,7 @@ import "server-only";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
-const dataDirectory = process.env.LOCAL_DATA_DIR || join(process.cwd(), ".data");
+const dataDirectory = process.env.LOCAL_DATA_DIR || (process.env.VERCEL ? "/tmp/ats-data" : join(process.cwd(), ".data"));
 const queues = new Map<string, Promise<unknown>>();
 
 export async function readLocalJson<T>(fileName: string, fallback: T): Promise<T> {
