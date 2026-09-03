@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+.data/
+.vercel/
+_bmad/
+_bmad-output/
+*.log
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
